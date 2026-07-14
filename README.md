@@ -8,3 +8,12 @@
 8. Download Pieces
 9. Verify SHA1
 10. Assemble files
+
+
+## HOW TO RUN
+
+* install cmake
+* run cmake
+* cd /build
+* run make
+* run ./my_program
