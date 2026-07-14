@@ -1,3 +1,0 @@
-/home/de/Desktop/no/torrent-client/build/CMakeFiles/my_program.dir
-/home/de/Desktop/no/torrent-client/build/CMakeFiles/edit_cache.dir
-/home/de/Desktop/no/torrent-client/build/CMakeFiles/rebuild_cache.dir
