@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
+#include <bencodevalue.h>
 
 // Just tell the compiler this function exists
-void benCodeParser(std::ifstream& file);
+BencodeValue benCodeParser(std::istream& file, InfoPos& info);
 

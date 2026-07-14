@@ -2,15 +2,20 @@
 #include <fstream>
 #include <string>
 #include "stringparser.h"
+#include <bencodevalue.h>
 
-void stringParser(std::ifstream &file)
+BencodeValue stringParser(std::istream &file, InfoPos& pos)
 {   
+    BencodeValue result;
     int num = 0;
     while (file.peek() != ':'){
         num = num*10 + file.get() - '0';
     }
+    file.get();
     std::string str = "";
-    while(num){
+    while(num--){
         str += file.get();
     }
+    result.value = str;
+    return result;
 }

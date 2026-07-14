@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o.d"
   "CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o"
   "CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o.d"
+  "CMakeFiles/my_program.dir/src/util/printbencode.cpp.o"
+  "CMakeFiles/my_program.dir/src/util/printbencode.cpp.o.d"
   "my_program"
   "my_program.pdb"
 )

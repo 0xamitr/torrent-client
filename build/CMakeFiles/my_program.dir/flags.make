@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser" -I"/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/intparser" -I"/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/listparser" -I"/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/stringparser" -I"/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/dictparser"
+CXX_INCLUDES = -I/home/de/Desktop/no/torrent-client/src/parser -I/home/de/Desktop/no/torrent-client/src/parser/intparser -I/home/de/Desktop/no/torrent-client/src/parser/listparser -I/home/de/Desktop/no/torrent-client/src/parser/stringparser -I/home/de/Desktop/no/torrent-client/src/parser/dictparser -I/home/de/Desktop/no/torrent-client/src/util
 
 CXX_FLAGS = -std=gnu++20
 

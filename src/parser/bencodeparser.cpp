@@ -5,33 +5,31 @@
 #include "parser.h"
 #include <iostream>
 #include <string>
+#include <bencodevalue.h>
 
-// Write your actual code here
-void benCodeParser(std::ifstream& file) {
-    std::cout << "\n[Parser] Successfully hooked into file stream!" << std::endl;
-    // Your torrent parsing code goes here...
+
+BencodeValue benCodeParser(std::istream& file, InfoPos& pos) {
+    BencodeValue result;
     if(file.peek() == 'e')
-        return;
+        return result;
     else if(file.peek() == 'd'){
-        std::cout << "reading...." << file.peek() << std::endl; 
+        // std::cout << "reading dictionanry....."  << std::endl; 
         file.get();
-        dictParser(file);
+        return dictParser(file, pos);
     }
     else if(file.peek() == 'i'){
+        // std::cout << "reading integer......." << std::endl;
         file.get();
-        intParser(file);
+        return intParser(file, pos);
     }
 
     else if(file.peek() == 'l'){
+        // std::cout << "reading list......" << std::endl;
         file.get();
-        listParser(file);
+        return listParser(file, pos);
     }
     else{
-        stringParser(file);
+        // std::cout << "reading strings......" << std::endl;
+        return stringParser(file, pos);
     }
-
-
-
-    
-    
 }

@@ -1,4 +1,5 @@
 #pragma once
 #include <fstream>
+#include <bencodevalue.h>
 
-void intParser(std::ifstream& file);
+BencodeValue intParser(std::istream& file, InfoPos& pos);

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/de/Desktop/Untitled Folder 2/torrent-client"
+CMAKE_SOURCE_DIR = /home/de/Desktop/no/torrent-client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/de/Desktop/Untitled Folder 2/torrent-client/build"
+CMAKE_BINARY_DIR = /home/de/Desktop/no/torrent-client/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/my_program.dir/depend.make
@@ -70,88 +70,102 @@ include CMakeFiles/my_program.dir/progress.make
 include CMakeFiles/my_program.dir/flags.make
 
 CMakeFiles/my_program.dir/src/main.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/main.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/main.cpp
+CMakeFiles/my_program.dir/src/main.cpp.o: /home/de/Desktop/no/torrent-client/src/main.cpp
 CMakeFiles/my_program.dir/src/main.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_program.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/main.cpp.o -MF CMakeFiles/my_program.dir/src/main.cpp.o.d -o CMakeFiles/my_program.dir/src/main.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_program.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/main.cpp.o -MF CMakeFiles/my_program.dir/src/main.cpp.o.d -o CMakeFiles/my_program.dir/src/main.cpp.o -c /home/de/Desktop/no/torrent-client/src/main.cpp
 
 CMakeFiles/my_program.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/main.cpp" > CMakeFiles/my_program.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/main.cpp > CMakeFiles/my_program.dir/src/main.cpp.i
 
 CMakeFiles/my_program.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/main.cpp" -o CMakeFiles/my_program.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/main.cpp -o CMakeFiles/my_program.dir/src/main.cpp.s
 
 CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/parser/bencodeparser.cpp
+CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o: /home/de/Desktop/no/torrent-client/src/parser/bencodeparser.cpp
 CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/bencodeparser.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.o -c /home/de/Desktop/no/torrent-client/src/parser/bencodeparser.cpp
 
 CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/bencodeparser.cpp" > CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/parser/bencodeparser.cpp > CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.i
 
 CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/bencodeparser.cpp" -o CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/parser/bencodeparser.cpp -o CMakeFiles/my_program.dir/src/parser/bencodeparser.cpp.s
 
 CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/parser/dictparser/dictparser.cpp
+CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o: /home/de/Desktop/no/torrent-client/src/parser/dictparser/dictparser.cpp
 CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/dictparser/dictparser.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o -c /home/de/Desktop/no/torrent-client/src/parser/dictparser/dictparser.cpp
 
 CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/dictparser/dictparser.cpp" > CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/parser/dictparser/dictparser.cpp > CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.i
 
 CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/dictparser/dictparser.cpp" -o CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/parser/dictparser/dictparser.cpp -o CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.s
 
 CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/parser/stringparser/stringparser.cpp
+CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o: /home/de/Desktop/no/torrent-client/src/parser/stringparser/stringparser.cpp
 CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/stringparser/stringparser.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o -c /home/de/Desktop/no/torrent-client/src/parser/stringparser/stringparser.cpp
 
 CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/stringparser/stringparser.cpp" > CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/parser/stringparser/stringparser.cpp > CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.i
 
 CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/stringparser/stringparser.cpp" -o CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/parser/stringparser/stringparser.cpp -o CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.s
 
 CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/parser/listparser/listparser.cpp
+CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o: /home/de/Desktop/no/torrent-client/src/parser/listparser/listparser.cpp
 CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/listparser/listparser.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o -c /home/de/Desktop/no/torrent-client/src/parser/listparser/listparser.cpp
 
 CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/listparser/listparser.cpp" > CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/parser/listparser/listparser.cpp > CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.i
 
 CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/listparser/listparser.cpp" -o CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/parser/listparser/listparser.cpp -o CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.s
 
 CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o: /home/de/Desktop/Untitled\ Folder\ 2/torrent-client/src/parser/intparser/intparser.cpp
+CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o: /home/de/Desktop/no/torrent-client/src/parser/intparser/intparser.cpp
 CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o -c "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/intparser/intparser.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o -MF CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o.d -o CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o -c /home/de/Desktop/no/torrent-client/src/parser/intparser/intparser.cpp
 
 CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/intparser/intparser.cpp" > CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/parser/intparser/intparser.cpp > CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.i
 
 CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/de/Desktop/Untitled Folder 2/torrent-client/src/parser/intparser/intparser.cpp" -o CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/parser/intparser/intparser.cpp -o CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.s
+
+CMakeFiles/my_program.dir/src/util/printbencode.cpp.o: CMakeFiles/my_program.dir/flags.make
+CMakeFiles/my_program.dir/src/util/printbencode.cpp.o: /home/de/Desktop/no/torrent-client/src/util/printbencode.cpp
+CMakeFiles/my_program.dir/src/util/printbencode.cpp.o: CMakeFiles/my_program.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/my_program.dir/src/util/printbencode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/util/printbencode.cpp.o -MF CMakeFiles/my_program.dir/src/util/printbencode.cpp.o.d -o CMakeFiles/my_program.dir/src/util/printbencode.cpp.o -c /home/de/Desktop/no/torrent-client/src/util/printbencode.cpp
+
+CMakeFiles/my_program.dir/src/util/printbencode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_program.dir/src/util/printbencode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/de/Desktop/no/torrent-client/src/util/printbencode.cpp > CMakeFiles/my_program.dir/src/util/printbencode.cpp.i
+
+CMakeFiles/my_program.dir/src/util/printbencode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_program.dir/src/util/printbencode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/de/Desktop/no/torrent-client/src/util/printbencode.cpp -o CMakeFiles/my_program.dir/src/util/printbencode.cpp.s
 
 # Object files for target my_program
 my_program_OBJECTS = \
@@ -160,7 +174,8 @@ my_program_OBJECTS = \
 "CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o" \
 "CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o" \
 "CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o" \
-"CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o"
+"CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o" \
+"CMakeFiles/my_program.dir/src/util/printbencode.cpp.o"
 
 # External object files for target my_program
 my_program_EXTERNAL_OBJECTS =
@@ -171,9 +186,11 @@ my_program: CMakeFiles/my_program.dir/src/parser/dictparser/dictparser.cpp.o
 my_program: CMakeFiles/my_program.dir/src/parser/stringparser/stringparser.cpp.o
 my_program: CMakeFiles/my_program.dir/src/parser/listparser/listparser.cpp.o
 my_program: CMakeFiles/my_program.dir/src/parser/intparser/intparser.cpp.o
+my_program: CMakeFiles/my_program.dir/src/util/printbencode.cpp.o
 my_program: CMakeFiles/my_program.dir/build.make
+my_program: /usr/lib/x86_64-linux-gnu/libcrypto.so
 my_program: CMakeFiles/my_program.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable my_program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/de/Desktop/no/torrent-client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable my_program"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_program.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +202,6 @@ CMakeFiles/my_program.dir/clean:
 .PHONY : CMakeFiles/my_program.dir/clean
 
 CMakeFiles/my_program.dir/depend:
-	cd "/home/de/Desktop/Untitled Folder 2/torrent-client/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/de/Desktop/Untitled Folder 2/torrent-client" "/home/de/Desktop/Untitled Folder 2/torrent-client" "/home/de/Desktop/Untitled Folder 2/torrent-client/build" "/home/de/Desktop/Untitled Folder 2/torrent-client/build" "/home/de/Desktop/Untitled Folder 2/torrent-client/build/CMakeFiles/my_program.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /home/de/Desktop/no/torrent-client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/de/Desktop/no/torrent-client /home/de/Desktop/no/torrent-client /home/de/Desktop/no/torrent-client/build /home/de/Desktop/no/torrent-client/build /home/de/Desktop/no/torrent-client/build/CMakeFiles/my_program.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/my_program.dir/depend
 

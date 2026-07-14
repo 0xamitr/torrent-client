@@ -3,19 +3,24 @@
 #include "parser.h"
 #include <fstream>
 #include "dictparser.h"
+#include <bencodevalue.h>
+#include <string>
 
-void dictParser(std::ifstream &file){
-
-    if(file.peek() == 'e'){
-        file.get();
-        return;
+BencodeValue dictParser(std::istream &file, InfoPos& pos)
+{
+    Dictionary dictionary;
+    BencodeValue result;
+    while (file.peek() != 'e')
+    {
+        std::string key = std::get<std::string>(stringParser(file, pos).value);
+        if(key == "info")
+            pos.start = file.tellg();
+        dictionary[key] = std::make_unique<
+            BencodeValue>(benCodeParser(file, pos));
+        if(key == "info")
+            pos.end = file.tellg();
     }
-    else{
-        int dictsize = file.get();
-        while(dictsize){
-            stringParser(file);
-            benCodeParser(file);
-            dictsize--;
-        }
-    }
+    file.get();
+    result.value = std::move(dictionary);
+    return result;
 }
