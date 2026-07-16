@@ -15,6 +15,7 @@ add_executable(my_program
     src/parser/trackerparser/trackerparser.cpp
     src/util/printbencode.cpp
     src/torrent/torrent.cpp
+    src/tracker/udptracker.cpp
 )
 
 include_directories(
@@ -26,6 +27,7 @@ include_directories(
     src/parser/trackerparser
     src/util
     src/torrent
+    src/tracker
 )
 
 find_package(OpenSSL REQUIRED)
