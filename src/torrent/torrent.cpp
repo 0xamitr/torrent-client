@@ -11,6 +11,7 @@
 
 Torrent LoadTorrent(const std::string &filename)
 {
+    std::cout << "Loading torrent" << '\n';
     Torrent torrent;
     InfoPos infoPos;
 

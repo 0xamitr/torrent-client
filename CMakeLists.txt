@@ -3,7 +3,8 @@ project(MyCppApplication VERSION 1.0)
 # Force the C++20 language standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_BUILD_TYPE Debug)
+find_package(OpenSSL REQUIRED)
 # Define your final executable and where the source code lives
 add_executable(my_program
     src/main.cpp
@@ -16,6 +17,12 @@ add_executable(my_program
     src/util/printbencode.cpp
     src/torrent/torrent.cpp
     src/tracker/udptracker.cpp
+    src/tracker/httptracker.cpp
+    src/tracker/tracker.cpp
+    src/peer/peer.cpp
+    src/peer/connect.cpp
+    src/peer/message.cpp
+    src/peer/handshake.cpp
 )
 
 include_directories(
@@ -28,8 +35,8 @@ include_directories(
     src/util
     src/torrent
     src/tracker
+    src/peer
 )
 
 find_package(OpenSSL REQUIRED)
-
-target_link_libraries(my_program PRIVATE OpenSSL::Crypto)
+target_link_libraries(my_program PRIVATE OpenSSL::SSL OpenSSL::Crypto)

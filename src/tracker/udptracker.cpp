@@ -8,11 +8,13 @@
 #include <arpa/inet.h>
 #include <iostream>
 #include <vector>
+#include <mutex>
 
-std::vector<Peer> udpTracker(const Torrent &torrent)
+void udpTracker(const Torrent &torrent, const Tracker &tracker, std::unordered_set<Peer, PeerHash> &peers, std::mutex &peersMutex)
 {
+    std::cout << "Getting peers from UDP tracker" << '\n';
     uint16_t clientPort = 6881;
-    Tracker tracker = torrent.trackers[0];
+    int num = 0;
     // we provide hints when calling getaddrinfo() which gets the ip adresses
     // from the dns server among other things, these hints include the type of socket
     // we want to use, could be stream or dgram(connection less)
@@ -38,11 +40,24 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
         &hints,
         &servinfo);
 
+    if (status != 0)
+        return;
+
     // creates a socket for communication
     // the third argument was ai_protocol (tcp, udp) but we dont need it in this case,
     // since our ai_socktype is sock_dgram which the kernel automatically configures as
     // UDP
     int sockfd = socket(servinfo->ai_family, servinfo->ai_socktype, 0);
+
+    timeval tv;
+    tv.tv_sec = 5;
+    tv.tv_usec = 0;
+
+    setsockopt(sockfd,
+               SOL_SOCKET,
+               SO_RCVTIMEO,
+               &tv,
+               sizeof(tv));
 
     connect(sockfd, servinfo->ai_addr, servinfo->ai_addrlen);
 
@@ -56,13 +71,10 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
     memcpy(packet + 8, &action, 4);
     memcpy(packet + 12, &transaction_id, 4);
 
-    std::cout << "Sending package" << std::endl;
     size_t bytesSent = sendto(sockfd, packet, 16, 0, servinfo->ai_addr, servinfo->ai_addrlen);
 
     if (bytesSent == -1)
         perror("sendto");
-
-    std::cout << "Bytes sent:" << bytesSent << std::endl;
 
     struct sockaddr_storage from;
     socklen_t fromlen = sizeof from;
@@ -71,7 +83,11 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
 
     ssize_t bytesRead = recvfrom(sockfd, buffer, 16, 0, (struct sockaddr *)&from, &fromlen);
 
-    std::cout << "bytes read: " << bytesRead << std::endl;
+    if (bytesRead < 0)
+    {
+        perror("recvfrom");
+        return;
+    }
 
     uint64_t connection_id;
     memcpy(&action, buffer, 4);
@@ -80,10 +96,11 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
     transaction_id = ntohl(transaction_id);
     transaction_id_received = ntohl(transaction_id_received);
     memcpy(&connection_id, buffer + 8, 8);
+    connection_id = be64toh(connection_id);
 
     if (transaction_id != transaction_id_received)
     {
-        perror("transaction IDs are not equal");
+        std::cerr << "Transaction IDs do not match\n";
     }
 
     std::cout << "action: " << action << std::endl;
@@ -100,14 +117,15 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
     uint64_t left = htobe64(torrent.length);
     uint64_t uploaded = htobe64(0);
 
-    uint32_t event = htonl(0);           
-    uint32_t ip = htonl(0);             
-    uint32_t key = htonl(0x12345678);     
-    uint32_t numWant = htonl(0xFFFFFFFF); 
+    uint32_t event = htonl(0);
+    uint32_t ip = htonl(0);
+    uint32_t key = htonl(0x12345678);
+    uint32_t numWant = htonl(0xFFFFFFFF);
 
     clientPort = htons(clientPort);
 
-    memcpy(package, &connection_id, 8);
+    uint64_t connection_id_net = htobe64(connection_id);
+    memcpy(package, &connection_id_net, 8);
     memcpy(package + 8, &action, 4);
     memcpy(package + 12, &transaction_id, 4);
     memcpy(package + 16, torrent.infoHash.data(), 20);
@@ -122,14 +140,19 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
     memcpy(package + 92, &numWant, 4);
     memcpy(package + 96, &clientPort, 2);
 
-    std::cout << "Sending peer request......" << std::endl;
     ssize_t bytesSentPeer = sendto(sockfd, package, 98, 0, servinfo->ai_addr, servinfo->ai_addrlen);
-    std::cout << "bytes sent: " << bytesSentPeer << std::endl;
 
     uint8_t peerbuffer[1500];
     ssize_t bytesReadPeer = recvfrom(sockfd, peerbuffer, 1500, 0, (struct sockaddr *)&from, &fromlen);
 
-    std::cout << "bytes read: " << bytesReadPeer << std::endl;
+    if (bytesReadPeer < 0)
+    {
+        perror("recvfrom");
+        return;
+    }
+
+    std::cout << "action = " << ntohl(*reinterpret_cast<uint32_t *>(peerbuffer)) << '\n';
+    std::cout << "bytesReadPeer = " << bytesReadPeer << '\n';
 
     uint32_t interval;
     uint32_t leeches;
@@ -141,25 +164,15 @@ std::vector<Peer> udpTracker(const Torrent &torrent)
     memcpy(&seeders, peerbuffer + 16, 4);
 
     size_t n = 0;
-    std::vector<Peer> p;
-    while(20 + 6*n <= bytesReadPeer){
+    while (20 + 6 * n < bytesReadPeer)
+    {
         Peer peer;
-        memcpy(peer.ip.data(), peerbuffer + 20+6*n, 4);
-        memcpy(&peer.port, peerbuffer + 24+6*n, 2);
-
-        p.push_back(peer);
+        memcpy(peer.ip.data(), peerbuffer + 20 + 6 * n, 4);
+        uint16_t port;
+        memcpy(&port, peerbuffer + 24 + 6 * n, 2);
+        peer.port = ntohs(port);
+        peer.isIPv6 = false;
+        peers.insert(peer);
         n++;
     }
-
-
-    interval = ntohl(interval);
-    leeches = ntohl(leeches);
-    action = ntohl(action);
-    seeders = ntohl(seeders);
-
-    std::cout << "interval: " << interval << std::endl;
-    std::cout << "action: " << action << std::endl;
-    std::cout << "leeches: " << leeches << std::endl;
-    std::cout << "seeders: " << seeders << std::endl;
-    return p;
 }

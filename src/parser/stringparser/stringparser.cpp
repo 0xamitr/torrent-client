@@ -8,7 +8,7 @@ BencodeValue stringParser(std::istream &file, InfoPos& pos)
 {   
     BencodeValue result;
     int num = 0;
-    while (file.peek() != ':'){
+    while (file.peek() != ':' && file.peek() != EOF){
         num = num*10 + file.get() - '0';
     }
     file.get();

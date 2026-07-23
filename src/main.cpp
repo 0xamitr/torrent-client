@@ -7,6 +7,13 @@
 #include <openssl/sha.h>
 #include "torrent/torrent.h"
 #include "tracker/udptracker.h"
+#include "peer/connect.h"
+#include "tracker/tracker.h"
+#include "tracker/httptracker.h"
+#include <unordered_set>
+#include "peer/peer.h"
+#include "peer/handshake.h"
+#include "peer/message.h"
 
 int main()
 {
@@ -14,21 +21,41 @@ int main()
     std::cout << "Hello NotitTorrent" << std::endl;
     std::cout << "Reading Torrent file...................." << std::endl;
 
-    Torrent torrent = LoadTorrent("../A1454F1AFF699FB39F0E010AEC2D75637E7E76F9.torrent");
+    Torrent torrent = LoadTorrent("../ubuntu-26.04-desktop-amd64.iso.torrent");
 
     std::cout << torrent.name << std::endl;
 
-    std::vector<Peer> peer = udpTracker(torrent);
-    std::cout << "peer size: " << peer.size() << std::endl;
-    for (size_t i = 0; i < peer.size(); i++)
-    {
-        std::cout << "ip: "
-                  << static_cast<int>(peer[i].ip[0]) << "."
-                  << static_cast<int>(peer[i].ip[1]) << "."
-                  << static_cast<int>(peer[i].ip[2]) << "."
-                  << static_cast<int>(peer[i].ip[3]);
+    std::unordered_set<Peer, PeerHash> peers = getTracker(torrent);
 
-        std::cout << "  port: " << peer[i].port << '\n';
+    std::cout << "No. of Peers found: " << peers.size() << '\n';
+
+    int connected = 0;
+
+    std::vector<PeerConnection> connectedPeers;
+    for (const auto &peer : peers)
+    {
+        std::cout << "Trying to connect to a peer\n";
+        std::cout << "IP: "
+                  << +peer.ip[0] << "."
+                  << +peer.ip[1] << "."
+                  << +peer.ip[2] << "."
+                  << +peer.ip[3] << '\n';
+
+        if (connectPeer(peer, connectedPeers) == 0)
+            connected++;
     }
+
+    // handShake(peers);
+    std::cout << "Successfully connected to "
+              << connected
+              << " out of "
+              << peers.size()
+              << " peers\n";
+    for (auto &connectedPeer : connectedPeers)
+    {
+        if (handShake(connectedPeer, torrent.infoHash))
+            message(connectedPeer);
+    }
+
     return 0;
 }

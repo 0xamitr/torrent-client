@@ -19,11 +19,11 @@ Tracker trackerParser(const std::string link)
     i += 3;
     while (i < len)
     {
-        if (link[i] == ':')
+        if (link[i] == ':' || link[i] == '/')
             break;
         host += link[i++];
     }
-    if(link[i] == ':')
+    if (link[i] == ':')
         i++;
     while (i < len)
     {

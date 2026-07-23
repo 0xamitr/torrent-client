@@ -1,5 +1,7 @@
 #pragma once
+
 #include <vector>
 #include "tracker.h"
+#include <mutex>
 
-std::vector<Peer> udpTracker(const Torrent& torrent);
+void udpTracker(const Torrent &torrent, const Tracker& tracker, std::unordered_set<Peer, PeerHash>& peers,  std::mutex &peersMutex);
